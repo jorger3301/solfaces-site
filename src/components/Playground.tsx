@@ -82,7 +82,7 @@ export function Playground() {
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 lg:gap-12">
           {/* Input column */}
           <div className="space-y-4">
             <div>

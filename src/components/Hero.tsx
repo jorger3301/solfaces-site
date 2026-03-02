@@ -1,7 +1,7 @@
 "use client";
 
 import { FaceStrip } from "./FaceStrip";
-import { SECTION_IDS } from "@/lib/constants";
+import { SECTION_IDS, GITHUB_URL } from "@/lib/constants";
 
 export function Hero() {
   return (
@@ -14,11 +14,33 @@ export function Hero() {
           SOLFACES
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-site-text-secondary max-w-xl mx-auto">
-          Deterministic wallet avatars and names for Solana
+          Every Solana wallet gets a unique face and name — generated instantly, stored nowhere
         </p>
         <p className="mt-2 text-sm text-site-text-muted">
           Same wallet = same face = same name. Forever.
         </p>
+
+        {/* CTA buttons */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+          <button
+            onClick={() =>
+              document
+                .getElementById(SECTION_IDS.playground)
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="px-6 py-3 text-sm font-medium rounded-lg bg-site-accent text-white hover:opacity-90 transition-opacity cursor-pointer"
+          >
+            Try It Now
+          </button>
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 text-sm font-medium rounded-lg border border-site-border text-site-text-secondary hover:border-site-accent hover:text-site-accent transition-colors"
+          >
+            View on GitHub
+          </a>
+        </div>
       </div>
 
       <FaceStrip />

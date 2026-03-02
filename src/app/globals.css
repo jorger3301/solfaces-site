@@ -148,6 +148,7 @@ footer,
 
 .face-strip {
   animation: scroll-strip 40s linear infinite;
+  will-change: transform;
 }
 
 .face-strip:hover {

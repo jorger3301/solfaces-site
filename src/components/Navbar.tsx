@@ -20,6 +20,42 @@ const NAV_LINKS = [
   { id: SECTION_IDS.api, label: "API" },
 ];
 
+function ThemeDots({
+  theme,
+  setTheme,
+  className = "",
+}: {
+  theme: string;
+  setTheme: (t: string) => void;
+  className?: string;
+}) {
+  return (
+    <div className={`flex items-center gap-0.5 ${className}`}>
+      {THEME_NAMES.map((name) => {
+        const colors = THEME_SITE_COLORS[name];
+        const isActive = theme === name;
+        return (
+          <button
+            key={name}
+            onClick={() => setTheme(name)}
+            aria-label={`${THEME_LABELS[name]} theme`}
+            className="p-2 cursor-pointer group"
+          >
+            <span
+              className={`block w-3 h-3 rounded-[3px] border transition-all ${
+                isActive
+                  ? "border-site-accent scale-125 shadow-sm"
+                  : "border-transparent group-hover:scale-110 opacity-60 group-hover:opacity-100"
+              }`}
+              style={{ backgroundColor: colors.accent }}
+            />
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Navbar() {
   const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("");
@@ -32,6 +68,14 @@ export function Navbar() {
     handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on scroll
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const close = () => setMobileOpen(false);
+    window.addEventListener("scroll", close, { passive: true });
+    return () => window.removeEventListener("scroll", close);
+  }, [mobileOpen]);
 
   useEffect(() => {
     const ids = NAV_LINKS.map((l) => l.id);
@@ -97,32 +141,10 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Theme dots + mobile toggle */}
-        <div className="flex items-center gap-2">
-          {/* Theme dots (always visible) */}
-          <div className="flex items-center gap-0.5">
-            {THEME_NAMES.map((name) => {
-              const colors = THEME_SITE_COLORS[name];
-              const isActive = theme === name;
-              return (
-                <button
-                  key={name}
-                  onClick={() => setTheme(name)}
-                  aria-label={`${THEME_LABELS[name]} theme`}
-                  className="p-2.5 cursor-pointer group"
-                >
-                  <span
-                    className={`block w-3 h-3 rounded-full border transition-all ${
-                      isActive
-                        ? "border-site-accent scale-125 shadow-sm"
-                        : "border-transparent group-hover:scale-110 opacity-60 group-hover:opacity-100"
-                    }`}
-                    style={{ backgroundColor: colors.accent }}
-                  />
-                </button>
-              );
-            })}
-          </div>
+        {/* Theme squircles + mobile toggle */}
+        <div className="flex items-center gap-1">
+          {/* Theme squircles — hidden on small phones, visible on sm+ */}
+          <ThemeDots theme={theme} setTheme={setTheme} className="hidden sm:flex" />
 
           {/* Mobile hamburger */}
           <button
@@ -149,7 +171,7 @@ export function Navbar() {
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className={`px-3 py-2 text-sm rounded-md text-left transition-all cursor-pointer ${
+                className={`px-4 py-3 text-sm rounded-md text-left transition-all cursor-pointer ${
                   activeSection === id
                     ? "text-site-accent bg-site-accent-dim font-medium"
                     : "text-site-text-muted hover:text-site-text-secondary"
@@ -158,6 +180,12 @@ export function Navbar() {
                 {label}
               </button>
             ))}
+          </div>
+
+          {/* Theme squircles in mobile menu (visible on phones where navbar dots are hidden) */}
+          <div className="sm:hidden pt-3 mt-3 border-t border-site-border">
+            <p className="text-xs text-site-text-muted mb-2 px-1">Theme</p>
+            <ThemeDots theme={theme} setTheme={setTheme} className="flex-wrap" />
           </div>
         </div>
       )}
