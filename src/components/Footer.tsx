@@ -48,14 +48,17 @@ export function Footer() {
           >
             npm
           </a>
-          <a
-            href="https://github.com/jorger3301"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-site-text-secondary hover:text-site-accent transition-colors"
-          >
-            Built by jorger3301
-          </a>
+          <span className="text-site-text-secondary">
+            Built by{" "}
+            <a
+              href="https://x.com/retardedgains"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-site-accent transition-colors"
+            >
+              jorge
+            </a>
+          </span>
         </div>
 
         <p className="text-xs text-site-text-muted">MIT License</p>
