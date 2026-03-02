@@ -39,6 +39,7 @@ function ThemeDots({
             key={name}
             onClick={() => setTheme(name)}
             aria-label={`${THEME_LABELS[name]} theme`}
+            title={THEME_LABELS[name]}
             className="p-2 cursor-pointer group"
           >
             <span
