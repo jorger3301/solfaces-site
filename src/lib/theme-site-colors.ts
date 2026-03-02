@@ -1,0 +1,197 @@
+export interface SiteColors {
+  bg: string;
+  bgRaised: string;
+  bgCard: string;
+  bgInput: string;
+  text: string;
+  textSecondary: string;
+  textMuted: string;
+  border: string;
+  borderHover: string;
+  accent: string;
+  accentDim: string;
+}
+
+export const THEME_SITE_COLORS: Record<string, SiteColors> = {
+  default: {
+    bg: "#faf8f6",
+    bgRaised: "#ffffff",
+    bgCard: "#ffffff",
+    bgInput: "#f0eeec",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "#e0deda",
+    borderHover: "#c8c4c0",
+    accent: "#8869ab",
+    accentDim: "rgba(136, 105, 171, 0.15)",
+  },
+  dark: {
+    bg: "#0e0f14",
+    bgRaised: "#1a1b23",
+    bgCard: "#1c1d28",
+    bgInput: "#12131a",
+    text: "#e8e8f0",
+    textSecondary: "#8c8ca0",
+    textMuted: "#5c5c70",
+    border: "#2a2a38",
+    borderHover: "#3a3a4a",
+    accent: "#9945FF",
+    accentDim: "rgba(153, 69, 255, 0.15)",
+  },
+  light: {
+    bg: "#fafafa",
+    bgRaised: "#ffffff",
+    bgCard: "#ffffff",
+    bgInput: "#f0f0f0",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "#e0e0e0",
+    borderHover: "#c8c8c8",
+    accent: "#6499af",
+    accentDim: "rgba(100, 153, 175, 0.15)",
+  },
+  mono: {
+    bg: "#f0f0f0",
+    bgRaised: "#ffffff",
+    bgCard: "#ffffff",
+    bgInput: "#e8e8e8",
+    text: "#333333",
+    textSecondary: "#666666",
+    textMuted: "#999999",
+    border: "#d0d0d0",
+    borderHover: "#b0b0b0",
+    accent: "#777777",
+    accentDim: "rgba(119, 119, 119, 0.15)",
+  },
+  flat: {
+    bg: "#faf8f6",
+    bgRaised: "#ffffff",
+    bgCard: "#ffffff",
+    bgInput: "#f0eeec",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "#e0deda",
+    borderHover: "#c8c4c0",
+    accent: "#69ab79",
+    accentDim: "rgba(105, 171, 121, 0.15)",
+  },
+  transparent: {
+    bg: "#faf8f6",
+    bgRaised: "#ffffff",
+    bgCard: "transparent",
+    bgInput: "#f0eeec",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "#e0deda",
+    borderHover: "#c8c4c0",
+    accent: "#b785b3",
+    accentDim: "rgba(183, 133, 179, 0.15)",
+  },
+  glass: {
+    bg: "#f0f0f4",
+    bgRaised: "rgba(255,255,255,0.6)",
+    bgCard: "rgba(255,255,255,0.4)",
+    bgInput: "rgba(255,255,255,0.5)",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "rgba(255,255,255,0.3)",
+    borderHover: "rgba(255,255,255,0.5)",
+    accent: "#6499af",
+    accentDim: "rgba(100, 153, 175, 0.15)",
+  },
+  glassDark: {
+    bg: "#0e0f14",
+    bgRaised: "rgba(255,255,255,0.08)",
+    bgCard: "rgba(255,255,255,0.05)",
+    bgInput: "rgba(255,255,255,0.06)",
+    text: "#e8e8f0",
+    textSecondary: "#8c8ca0",
+    textMuted: "#5c5c70",
+    border: "rgba(255,255,255,0.1)",
+    borderHover: "rgba(255,255,255,0.2)",
+    accent: "#9945FF",
+    accentDim: "rgba(153, 69, 255, 0.15)",
+  },
+  pixel: {
+    bg: "#faf8f6",
+    bgRaised: "#ffffff",
+    bgCard: "#ffffff",
+    bgInput: "#f0eeec",
+    text: "#222222",
+    textSecondary: "#555555",
+    textMuted: "#888888",
+    border: "#e0deda",
+    borderHover: "#c8c4c0",
+    accent: "#b98387",
+    accentDim: "rgba(185, 131, 135, 0.15)",
+  },
+  pixelRetro: {
+    bg: "#1a1a1a",
+    bgRaised: "#2a2a2a",
+    bgCard: "#2a2a2a",
+    bgInput: "#222222",
+    text: "#e0e0e0",
+    textSecondary: "#aaaaaa",
+    textMuted: "#777777",
+    border: "#3a3a3a",
+    borderHover: "#4a4a4a",
+    accent: "#e8c040",
+    accentDim: "rgba(232, 192, 64, 0.15)",
+  },
+  pixelClean: {
+    bg: "#ffffff",
+    bgRaised: "#f8f8f8",
+    bgCard: "#f8f8f8",
+    bgInput: "#f0f0f0",
+    text: "#1a1a2e",
+    textSecondary: "#5c5c70",
+    textMuted: "#8c8ca0",
+    border: "#e8e8e8",
+    borderHover: "#d0d0d0",
+    accent: "#69ab79",
+    accentDim: "rgba(105, 171, 121, 0.15)",
+  },
+};
+
+export const THEME_NAMES = Object.keys(THEME_SITE_COLORS);
+
+export const THEME_LABELS: Record<string, string> = {
+  default: "Default",
+  dark: "Dark",
+  light: "Light",
+  mono: "Mono",
+  flat: "Flat",
+  transparent: "Transparent",
+  glass: "Glass",
+  glassDark: "Glass Dark",
+  pixel: "Pixel",
+  pixelRetro: "Pixel Retro",
+  pixelClean: "Pixel Clean",
+};
+
+export const THEME_DESCRIPTIONS: Record<string, string> = {
+  default: "Gradient-rich rendering with full detail",
+  dark: "Moody dark tones with deep backgrounds",
+  light: "Soft pastel backgrounds, bright feel",
+  mono: "Full grayscale, no color",
+  flat: "No gradients, solid flat shapes",
+  transparent: "No background, compositing-ready",
+  glass: "Liquid glass with backdrop blur",
+  glassDark: "Dark liquid glass with rim lighting",
+  pixel: "Pixel art with rounded blocks",
+  pixelRetro: "CRT-style pixel art with scanlines",
+  pixelClean: "Clean high-density pixel art",
+};
+
+export const REACT_ONLY_THEMES = new Set([
+  "glass",
+  "glassDark",
+  "pixel",
+  "pixelRetro",
+  "pixelClean",
+]);
