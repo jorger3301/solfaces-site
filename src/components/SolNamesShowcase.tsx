@@ -2,9 +2,8 @@
 
 import { useMemo } from "react";
 import { SolFace, useSolName } from "solfaces/react";
-import { deriveIdentity } from "solfaces";
-import { PRESET_THEMES } from "solfaces/themes";
-import { useTheme } from "@/context/ThemeContext";
+import { deriveIdentity } from "solfaces/names";
+import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { CodeBlock } from "./CodeBlock";
@@ -12,8 +11,7 @@ import { CodeBlock } from "./CodeBlock";
 const NAME_WALLETS = DEMO_WALLETS.slice(0, 8);
 
 function NameCard({ wallet }: { wallet: string }) {
-  const { theme } = useTheme();
-  const themeObj = PRESET_THEMES[theme];
+  const themeObj = useThemeObj();
   const id = useMemo(() => deriveIdentity(wallet), [wallet]);
 
   return (
@@ -42,6 +40,8 @@ deriveName("7xKXtg...", "full");      // "Planar Beaver-Comet Arc"
 
 const id = deriveIdentity("7xKXtg...");
 // { short, name, tag, full, adjective, noun, hash, discriminator }`;
+
+const TABLE_ID = deriveIdentity(DEMO_WALLETS[0]);
 
 export function SolNamesShowcase() {
   return (
@@ -87,7 +87,7 @@ export function SolNamesShowcase() {
               <tr>
                 <td className="px-4 py-2 font-mono text-site-text">short</td>
                 <td className="px-4 py-2 font-mono text-site-accent">
-                  &quot;Sunny&quot;
+                  &quot;{TABLE_ID.short}&quot;
                 </td>
                 <td className="px-4 py-2 text-site-text-muted">~1K</td>
                 <td className="px-4 py-2 text-site-text-secondary">
@@ -97,7 +97,7 @@ export function SolNamesShowcase() {
               <tr>
                 <td className="px-4 py-2 font-mono text-site-text">display</td>
                 <td className="px-4 py-2 font-mono text-site-accent">
-                  &quot;Sunny Icon&quot;
+                  &quot;{TABLE_ID.name}&quot;
                 </td>
                 <td className="px-4 py-2 text-site-text-muted">~1M</td>
                 <td className="px-4 py-2 text-site-text-secondary">
@@ -107,7 +107,7 @@ export function SolNamesShowcase() {
               <tr>
                 <td className="px-4 py-2 font-mono text-site-text">tag</td>
                 <td className="px-4 py-2 font-mono text-site-accent">
-                  &quot;Sunny Icon#2f95&quot;
+                  &quot;{TABLE_ID.tag}&quot;
                 </td>
                 <td className="px-4 py-2 text-site-text-muted">~65.5B</td>
                 <td className="px-4 py-2 text-site-text-secondary">
@@ -117,7 +117,7 @@ export function SolNamesShowcase() {
               <tr>
                 <td className="px-4 py-2 font-mono text-site-text">full</td>
                 <td className="px-4 py-2 font-mono text-site-accent">
-                  &quot;Sunny Icon-Infinite Ore&quot;
+                  &quot;{TABLE_ID.full}&quot;
                 </td>
                 <td className="px-4 py-2 text-site-text-muted">~1T</td>
                 <td className="px-4 py-2 text-site-text-secondary">

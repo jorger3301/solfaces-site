@@ -3,8 +3,7 @@
 import { useMemo } from "react";
 import { SolFace, useSolName } from "solfaces/react";
 import { agentAppearancePrompt } from "solfaces";
-import { PRESET_THEMES } from "solfaces/themes";
-import { useTheme } from "@/context/ThemeContext";
+import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { CodeBlock } from "./CodeBlock";
@@ -22,8 +21,7 @@ const MCP_CONFIG = `{
 }`;
 
 export function AgentIdentity() {
-  const { theme } = useTheme();
-  const themeObj = PRESET_THEMES[theme];
+  const themeObj = useThemeObj();
   const name = useSolName(AGENT_WALLET, "display");
 
   const prompt = useMemo(

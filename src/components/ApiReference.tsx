@@ -2,7 +2,7 @@ import { FadeIn } from "./FadeIn";
 import { SECTION_IDS, GITHUB_URL } from "@/lib/constants";
 
 const REACT_PROPS = [
-  { prop: "wallet", type: "string", required: true, description: "Solana wallet address (base58)" },
+  { prop: "walletAddress", type: "string", required: true, description: "Solana wallet address (base58)" },
   { prop: "size", type: "number", required: false, description: "Avatar size in pixels (default: 64)" },
   { prop: "theme", type: "SolFaceTheme", required: false, description: "Theme preset or custom theme object" },
   { prop: "enableBlink", type: "boolean", required: false, description: "Enable CSS blink animation" },

@@ -23,7 +23,7 @@ export function Hero() {
 
       <FaceStrip />
 
-      <div className="absolute bottom-8 text-site-text-muted text-sm animate-bounce">
+      <div className="absolute bottom-8 text-site-text-muted text-sm animate-bounce" aria-hidden="true">
         <svg
           width="24"
           height="24"
@@ -35,7 +35,6 @@ export function Hero() {
         >
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
-        <span className="sr-only">Scroll to explore</span>
       </div>
     </section>
   );

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --site-bg: #faf8f6;
   --site-bg-raised: #ffffff;
@@ -35,6 +39,48 @@ body {
   color: var(--site-text);
   font-family: var(--font-sans), system-ui, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ─── Scroll offset for fixed navbar ─── */
+
+section[id] {
+  scroll-margin-top: 72px;
+}
+
+/* ─── Skip to main ─── */
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--site-accent);
+  color: #fff;
+  font-size: 0.875rem;
+  border-radius: 0 0 0.5rem 0;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* ─── Focus visible ─── */
+
+*:focus-visible {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 2px;
+}
+
+/* ─── Smooth theme transitions ─── */
+
+.theme-transition,
+button,
+a,
+input,
+[class*="border-site-"],
+[class*="bg-site-"] {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 /* ─── Animations ─── */

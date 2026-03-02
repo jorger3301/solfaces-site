@@ -2,15 +2,14 @@
 
 import { useMemo } from "react";
 import { SolFace, useSolName } from "solfaces/react";
-import { PRESET_THEMES } from "solfaces/themes";
-import { useTheme } from "@/context/ThemeContext";
+import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS } from "@/lib/constants";
 
-function FaceItem({ wallet }: { wallet: string }) {
+function FaceItem({ wallet, theme }: { wallet: string; theme?: object }) {
   const name = useSolName(wallet, "short");
   return (
     <div className="flex flex-col items-center gap-1 flex-shrink-0 px-2">
-      <SolFace walletAddress={wallet} size={56} enableBlink />
+      <SolFace walletAddress={wallet} size={56} enableBlink theme={theme} />
       <span className="text-xs text-site-text-muted font-mono truncate max-w-[72px]">
         {name}
       </span>
@@ -19,8 +18,7 @@ function FaceItem({ wallet }: { wallet: string }) {
 }
 
 export function FaceStrip() {
-  const { theme } = useTheme();
-  const themeObj = PRESET_THEMES[theme];
+  const themeObj = useThemeObj();
 
   // Duplicate the list for seamless loop
   const wallets = useMemo(
@@ -32,7 +30,7 @@ export function FaceStrip() {
     <div className="w-full overflow-hidden py-4">
       <div className="face-strip flex items-start" style={{ width: "max-content" }}>
         {wallets.map((wallet, i) => (
-          <FaceItem key={`${wallet}-${i}`} wallet={wallet} />
+          <FaceItem key={`${wallet}-${i}`} wallet={wallet} theme={themeObj} />
         ))}
       </div>
     </div>

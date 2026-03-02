@@ -39,6 +39,12 @@ export const metadata: Metadata = {
     "solnames",
     "pfp",
   ],
+  icons: {
+    icon: "/favicon.svg",
+  },
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "SolFaces — Deterministic Wallet Avatars & Names for Solana",
     description: "Same wallet = same face = same name. Forever.",
@@ -53,6 +59,18 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "SolFaces",
+  description:
+    "Deterministic wallet avatars and names for Solana. Every wallet generates a unique face and name.",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Any",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  url: BASE_URL,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -60,9 +78,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://img.shields.io" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <a href="#main" className="skip-link">Skip to main content</a>
         <ThemeProvider defaultTheme="default">{children}</ThemeProvider>
         <Analytics />
         <SpeedInsights />

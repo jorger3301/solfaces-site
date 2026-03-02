@@ -1,3 +1,4 @@
+import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Playground } from "@/components/Playground";
 import { InstallTabs } from "@/components/InstallTabs";
@@ -8,16 +9,18 @@ import { CodeExamples } from "@/components/CodeExamples";
 import { AgentIdentity } from "@/components/AgentIdentity";
 import { ApiReference } from "@/components/ApiReference";
 import { Footer } from "@/components/Footer";
-import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { SectionDivider } from "@/components/SectionDivider";
 
 export default function Home() {
   return (
-    <main>
-      <ThemeSwitcher />
+    <main id="main">
+      <Navbar />
       <Hero />
       <SectionDivider />
-      <Playground />
+      <ErrorBoundary>
+        <Playground />
+      </ErrorBoundary>
       <SectionDivider />
       <InstallTabs />
       <SectionDivider />
@@ -25,7 +28,9 @@ export default function Home() {
       <SectionDivider />
       <WhySolFaces />
       <SectionDivider />
-      <ThemeGallery />
+      <ErrorBoundary>
+        <ThemeGallery />
+      </ErrorBoundary>
       <SectionDivider />
       <CodeExamples />
       <SectionDivider />

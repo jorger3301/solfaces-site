@@ -17,13 +17,13 @@ export const DEMO_WALLETS = [
   "So11111111111111111111111111111111111111112",
 ] as const;
 
-// Pre-selected wallets for playground quick-try buttons
+// Pre-selected wallets for playground quick-try buttons (labels are SolNames)
 export const QUICK_TRY_WALLETS = [
-  { address: DEMO_WALLETS[0], label: "Explorer" },
-  { address: DEMO_WALLETS[1], label: "Trader" },
-  { address: DEMO_WALLETS[2], label: "Builder" },
-  { address: DEMO_WALLETS[3], label: "Artist" },
-  { address: DEMO_WALLETS[4], label: "Whale" },
+  { address: DEMO_WALLETS[0], label: "Planar Beaver" },
+  { address: DEMO_WALLETS[1], label: "Fierce Sortie" },
+  { address: DEMO_WALLETS[2], label: "Cedar Reed" },
+  { address: DEMO_WALLETS[3], label: "Deep Galaxy" },
+  { address: DEMO_WALLETS[4], label: "Braced Wellspring" },
 ] as const;
 
 export const SECTION_IDS = {

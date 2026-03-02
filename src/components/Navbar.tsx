@@ -1,0 +1,161 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import { useTheme } from "@/context/ThemeContext";
+import {
+  THEME_NAMES,
+  THEME_LABELS,
+  THEME_SITE_COLORS,
+} from "@/lib/theme-site-colors";
+import { SECTION_IDS } from "@/lib/constants";
+
+const NAV_LINKS = [
+  { id: SECTION_IDS.playground, label: "Playground" },
+  { id: SECTION_IDS.install, label: "Install" },
+  { id: SECTION_IDS.solnames, label: "Names" },
+  { id: SECTION_IDS.themes, label: "Themes" },
+  { id: SECTION_IDS.code, label: "Code" },
+  { id: SECTION_IDS.agent, label: "Agent" },
+  { id: SECTION_IDS.api, label: "API" },
+];
+
+export function Navbar() {
+  const { theme, setTheme } = useTheme();
+  const [activeSection, setActiveSection] = useState("");
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const ids = NAV_LINKS.map((l) => l.id);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
+    );
+
+    for (const id of ids) {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    }
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = useCallback(
+    (id: string) => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      setMobileOpen(false);
+    },
+    []
+  );
+
+  return (
+    <nav
+      role="navigation"
+      aria-label="Main navigation"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-site-bg/80 backdrop-blur-md border-b border-site-border shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+        {/* Wordmark */}
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="text-sm font-bold tracking-[0.2em] text-site-text hover:text-site-accent transition-colors cursor-pointer"
+        >
+          SOLFACES
+        </button>
+
+        {/* Desktop nav links */}
+        <div className="hidden md:flex items-center gap-1">
+          {NAV_LINKS.map(({ id, label }) => (
+            <button
+              key={id}
+              onClick={() => scrollTo(id)}
+              className={`px-3 py-1.5 text-xs rounded-md transition-all cursor-pointer ${
+                activeSection === id
+                  ? "text-site-accent bg-site-accent-dim font-medium"
+                  : "text-site-text-muted hover:text-site-text-secondary"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Theme dots + mobile toggle */}
+        <div className="flex items-center gap-2">
+          {/* Theme dots (always visible) */}
+          <div className="flex items-center gap-1">
+            {THEME_NAMES.map((name) => {
+              const colors = THEME_SITE_COLORS[name];
+              const isActive = theme === name;
+              return (
+                <button
+                  key={name}
+                  onClick={() => setTheme(name)}
+                  aria-label={`${THEME_LABELS[name]} theme`}
+                  className={`w-3.5 h-3.5 rounded-full border transition-all cursor-pointer ${
+                    isActive
+                      ? "border-site-accent scale-125 shadow-sm"
+                      : "border-transparent hover:scale-110 opacity-60 hover:opacity-100"
+                  }`}
+                  style={{ backgroundColor: colors.accent }}
+                />
+              );
+            })}
+          </div>
+
+          {/* Mobile hamburger */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            className="md:hidden p-1.5 text-site-text-muted hover:text-site-text transition-colors cursor-pointer"
+          >
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+              {mobileOpen ? (
+                <path d="M5 5l10 10M15 5L5 15" />
+              ) : (
+                <path d="M3 6h14M3 10h14M3 14h14" />
+              )}
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile dropdown */}
+      {mobileOpen && (
+        <div className="md:hidden bg-site-bg/95 backdrop-blur-md border-b border-site-border px-4 pb-4">
+          <div className="flex flex-col gap-1">
+            {NAV_LINKS.map(({ id, label }) => (
+              <button
+                key={id}
+                onClick={() => scrollTo(id)}
+                className={`px-3 py-2 text-sm rounded-md text-left transition-all cursor-pointer ${
+                  activeSection === id
+                    ? "text-site-accent bg-site-accent-dim font-medium"
+                    : "text-site-text-muted hover:text-site-text-secondary"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
+}

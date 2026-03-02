@@ -8,6 +8,7 @@ import {
   useCallback,
   type ReactNode,
 } from "react";
+import { PRESET_THEMES } from "solfaces/themes";
 import { THEME_SITE_COLORS, type SiteColors } from "@/lib/theme-site-colors";
 
 interface ThemeContextValue {
@@ -76,4 +77,9 @@ export function ThemeProvider({
 
 export function useTheme() {
   return useContext(ThemeContext);
+}
+
+export function useThemeObj() {
+  const { theme } = useTheme();
+  return PRESET_THEMES[theme] ?? PRESET_THEMES.default;
 }

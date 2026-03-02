@@ -1,15 +1,13 @@
 "use client";
 
 import { SolFace } from "solfaces/react";
-import { PRESET_THEMES } from "solfaces/themes";
-import { useTheme } from "@/context/ThemeContext";
+import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS, GITHUB_URL, NPM_URL } from "@/lib/constants";
 
 const FOOTER_WALLETS = DEMO_WALLETS.slice(5, 11);
 
 export function Footer() {
-  const { theme } = useTheme();
-  const themeObj = PRESET_THEMES[theme];
+  const themeObj = useThemeObj();
 
   return (
     <footer
