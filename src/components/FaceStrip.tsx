@@ -8,9 +8,9 @@ import { DEMO_WALLETS } from "@/lib/constants";
 function FaceItem({ wallet, theme }: { wallet: string; theme?: object }) {
   const name = useSolName(wallet, "short");
   return (
-    <div className="flex flex-col items-center gap-1 flex-shrink-0 px-2">
-      <SolFace walletAddress={wallet} size={56} enableBlink theme={theme} />
-      <span className="text-xs text-site-text-muted font-mono truncate max-w-[72px]">
+    <div className="flex flex-col items-center gap-1 flex-shrink-0 px-1.5 sm:px-2">
+      <SolFace walletAddress={wallet} size={44} enableBlink theme={theme} />
+      <span className="text-[10px] sm:text-xs text-site-text-muted font-mono truncate max-w-[56px] sm:max-w-[72px]">
         {name}
       </span>
     </div>

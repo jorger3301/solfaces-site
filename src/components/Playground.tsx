@@ -92,7 +92,7 @@ export function Playground() {
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Paste a Solana wallet address..."
                 aria-label="Solana wallet address"
-                className={`w-full px-4 py-3 rounded-lg border bg-site-bg-input text-site-text font-mono text-sm focus-visible:border-site-accent transition-colors ${
+                className={`w-full px-3 sm:px-4 py-3 rounded-lg border bg-site-bg-input text-site-text font-mono text-xs sm:text-sm focus-visible:border-site-accent transition-colors ${
                   showWarning ? "border-red-400" : "border-site-border"
                 }`}
               />

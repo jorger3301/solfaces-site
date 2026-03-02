@@ -23,8 +23,8 @@ export function CodeBlock({
           {language}
         </span>
       </div>
-      <pre className="p-4 overflow-x-auto">
-        <code className="text-sm font-mono text-site-text leading-relaxed whitespace-pre">
+      <pre className="p-3 sm:p-4 overflow-x-auto">
+        <code className="text-xs sm:text-sm font-mono text-site-text leading-relaxed whitespace-pre">
           {code}
         </code>
       </pre>
