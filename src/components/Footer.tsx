@@ -1,10 +1,43 @@
 "use client";
 
-import { SolFace } from "solfaces/react";
+import { useState, useCallback } from "react";
+import { SolFace, useSolName } from "solfaces/react";
 import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS, GITHUB_URL, NPM_URL } from "@/lib/constants";
 
 const FOOTER_WALLETS = DEMO_WALLETS.slice(5, 11);
+const DONATE_WALLET = "3opT9nFGRfR48xhLBUSXDUus5hDUeob1RX6Kfx3LeQcj";
+
+function DonateSection({ themeObj }: { themeObj?: object }) {
+  const name = useSolName(DONATE_WALLET, "display");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = useCallback(async () => {
+    await navigator.clipboard.writeText(DONATE_WALLET);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, []);
+
+  return (
+    <div className="flex flex-col items-center gap-3">
+      <p className="text-xs text-site-text-muted">Support the project</p>
+      <button
+        onClick={handleCopy}
+        className="flex items-center gap-3 px-4 py-3 rounded-xl border border-site-border bg-site-bg-card hover:border-site-accent transition-all cursor-pointer group"
+      >
+        <SolFace walletAddress={DONATE_WALLET} size={36} theme={themeObj} />
+        <div className="text-left">
+          <p className="text-sm font-semibold text-site-text group-hover:text-site-accent transition-colors">
+            {name}
+          </p>
+          <p className="text-[10px] font-mono text-site-text-muted">
+            {copied ? "Copied!" : `${DONATE_WALLET.slice(0, 4)}...${DONATE_WALLET.slice(-4)}`}
+          </p>
+        </div>
+      </button>
+    </div>
+  );
+}
 
 export function Footer() {
   const themeObj = useThemeObj();
@@ -30,6 +63,8 @@ export function Footer() {
             Deterministic wallet avatars & names for Solana
           </p>
         </div>
+
+        <DonateSection themeObj={themeObj} />
 
         <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
           <a
