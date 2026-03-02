@@ -35,8 +35,8 @@ function NameCard({ wallet }: { wallet: string }) {
 const EXAMPLE_CODE = `import { deriveName, deriveIdentity } from "solfaces";
 
 deriveName("7xKXtg...", "display");   // "Planar Beaver"
-deriveName("7xKXtg...", "tag");       // "Planar Beaver#8f2a"
-deriveName("7xKXtg...", "full");      // "Planar Beaver-Comet Arc"
+deriveName("7xKXtg...", "tag");       // "Planar Beaver#109b"
+deriveName("7xKXtg...", "full");      // "Planar Beaver-Still Planet"
 
 const id = deriveIdentity("7xKXtg...");
 // { short, name, tag, full, adjective, noun, hash, discriminator }`;
