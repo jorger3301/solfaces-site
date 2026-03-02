@@ -18,7 +18,7 @@ export function Footer() {
         {/* Decorative faces */}
         <div className="flex justify-center gap-3">
           {FOOTER_WALLETS.map((wallet) => (
-            <SolFace key={wallet} walletAddress={wallet} size={36} theme={themeObj} />
+            <SolFace key={wallet} walletAddress={wallet} size={40} theme={themeObj} />
           ))}
         </div>
 

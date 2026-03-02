@@ -66,61 +66,61 @@ export function SolNamesShowcase() {
       <FadeIn delay={0.2}>
         {/* Format table */}
         <div className="mb-8 overflow-x-auto">
-          <table className="w-full text-sm border border-site-border rounded-lg overflow-hidden">
+          <table className="w-full text-xs sm:text-sm border border-site-border rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-site-bg-input">
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">
                   Format
                 </th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">
                   Example
                 </th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">
                   Uniqueness
                 </th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">
                   Use Case
                 </th>
               </tr>
             </thead>
             <tbody className="divide-y divide-site-border">
               <tr>
-                <td className="px-4 py-2 font-mono text-site-text">short</td>
-                <td className="px-4 py-2 font-mono text-site-accent">
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-text">short</td>
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-accent">
                   &quot;{TABLE_ID.short}&quot;
                 </td>
-                <td className="px-4 py-2 text-site-text-muted">~1K</td>
-                <td className="px-4 py-2 text-site-text-secondary">
+                <td className="px-2 sm:px-4 py-2 text-site-text-muted">~1K</td>
+                <td className="px-2 sm:px-4 py-2 text-site-text-secondary">
                   Quick label
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 font-mono text-site-text">display</td>
-                <td className="px-4 py-2 font-mono text-site-accent">
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-text">display</td>
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-accent">
                   &quot;{TABLE_ID.name}&quot;
                 </td>
-                <td className="px-4 py-2 text-site-text-muted">~1M</td>
-                <td className="px-4 py-2 text-site-text-secondary">
+                <td className="px-2 sm:px-4 py-2 text-site-text-muted">~1M</td>
+                <td className="px-2 sm:px-4 py-2 text-site-text-secondary">
                   Profile name, chat
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 font-mono text-site-text">tag</td>
-                <td className="px-4 py-2 font-mono text-site-accent">
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-text">tag</td>
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-accent">
                   &quot;{TABLE_ID.tag}&quot;
                 </td>
-                <td className="px-4 py-2 text-site-text-muted">~65.5B</td>
-                <td className="px-4 py-2 text-site-text-secondary">
+                <td className="px-2 sm:px-4 py-2 text-site-text-muted">~65.5B</td>
+                <td className="px-2 sm:px-4 py-2 text-site-text-secondary">
                   Unique identifier
                 </td>
               </tr>
               <tr>
-                <td className="px-4 py-2 font-mono text-site-text">full</td>
-                <td className="px-4 py-2 font-mono text-site-accent">
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-text">full</td>
+                <td className="px-2 sm:px-4 py-2 font-mono text-site-accent">
                   &quot;{TABLE_ID.full}&quot;
                 </td>
-                <td className="px-4 py-2 text-site-text-muted">~1T</td>
-                <td className="px-4 py-2 text-site-text-secondary">
+                <td className="px-2 sm:px-4 py-2 text-site-text-muted">~1T</td>
+                <td className="px-2 sm:px-4 py-2 text-site-text-secondary">
                   Maximum uniqueness
                 </td>
               </tr>

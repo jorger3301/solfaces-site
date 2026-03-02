@@ -45,8 +45,8 @@ export function InstallTabs() {
           </div>
 
           {/* Command */}
-          <div className="flex items-center justify-between p-4">
-            <code className="text-sm font-mono text-site-text">
+          <div className="flex items-center justify-between p-4 overflow-x-auto">
+            <code className="text-xs sm:text-sm font-mono text-site-text whitespace-nowrap">
               {INSTALL_COMMANDS[active].command}
             </code>
             <CopyButton text={INSTALL_COMMANDS[active].command} />

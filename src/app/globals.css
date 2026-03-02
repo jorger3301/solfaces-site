@@ -41,6 +41,7 @@ body {
   background: var(--site-bg);
   color: var(--site-text);
   font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

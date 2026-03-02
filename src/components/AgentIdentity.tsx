@@ -31,7 +31,7 @@ export function AgentIdentity() {
         </p>
       </FadeIn>
 
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-6 md:gap-8">
         <FadeIn delay={0.1}>
           <div className="space-y-4">
             <CodeBlock
@@ -44,7 +44,7 @@ const prompt = agentAppearancePrompt(wallet, name);`}
               language="typescript"
             />
 
-            <div className="rounded-lg border border-site-border bg-site-bg-input p-4 font-mono text-xs text-site-text-secondary leading-relaxed max-h-48 overflow-y-auto">
+            <div className="rounded-lg border border-site-border bg-site-bg-input p-3 sm:p-4 font-mono text-xs text-site-text-secondary leading-relaxed max-h-48 overflow-y-auto">
               {prompt}
             </div>
           </div>

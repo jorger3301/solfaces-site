@@ -38,23 +38,23 @@ export function ApiReference() {
           React Component Props
         </h3>
         <div className="overflow-x-auto mb-12">
-          <table className="w-full text-sm border border-site-border rounded-lg overflow-hidden">
+          <table className="w-full text-xs sm:text-sm border border-site-border rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-site-bg-input">
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Prop</th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Type</th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Description</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Prop</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Type</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Description</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-site-border">
               {REACT_PROPS.map((p) => (
                 <tr key={p.prop}>
-                  <td className="px-4 py-2 font-mono text-site-accent">
+                  <td className="px-2 sm:px-4 py-2 font-mono text-site-accent">
                     {p.prop}
                     {p.required && <span className="text-red-400 ml-1">*</span>}
                   </td>
-                  <td className="px-4 py-2 font-mono text-site-text-muted">{p.type}</td>
-                  <td className="px-4 py-2 text-site-text-secondary">{p.description}</td>
+                  <td className="px-2 sm:px-4 py-2 font-mono text-site-text-muted">{p.type}</td>
+                  <td className="px-2 sm:px-4 py-2 text-site-text-secondary">{p.description}</td>
                 </tr>
               ))}
             </tbody>
@@ -67,20 +67,20 @@ export function ApiReference() {
           Core Functions
         </h3>
         <div className="overflow-x-auto mb-8">
-          <table className="w-full text-sm border border-site-border rounded-lg overflow-hidden">
+          <table className="w-full text-xs sm:text-sm border border-site-border rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-site-bg-input">
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Function</th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Returns</th>
-                <th className="text-left px-4 py-2 text-site-text-secondary font-medium">Description</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Function</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Returns</th>
+                <th className="text-left px-2 sm:px-4 py-2 text-site-text-secondary font-medium">Description</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-site-border">
               {CORE_FUNCTIONS.map((f) => (
                 <tr key={f.fn}>
-                  <td className="px-4 py-2 font-mono text-site-accent text-xs">{f.fn}</td>
-                  <td className="px-4 py-2 font-mono text-site-text-muted text-xs">{f.returns}</td>
-                  <td className="px-4 py-2 text-site-text-secondary">{f.description}</td>
+                  <td className="px-2 sm:px-4 py-2 font-mono text-site-accent text-xs">{f.fn}</td>
+                  <td className="px-2 sm:px-4 py-2 font-mono text-site-text-muted text-xs">{f.returns}</td>
+                  <td className="px-2 sm:px-4 py-2 text-site-text-secondary">{f.description}</td>
                 </tr>
               ))}
             </tbody>
