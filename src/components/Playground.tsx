@@ -108,7 +108,7 @@ export function Playground() {
                 <button
                   key={address}
                   onClick={() => selectWallet(address)}
-                  className={`px-3 py-1.5 text-xs rounded-full border transition-all cursor-pointer ${
+                  className={`px-4 py-2.5 text-xs rounded-full border transition-all cursor-pointer ${
                     input === address
                       ? "border-site-accent text-site-accent bg-site-accent-dim"
                       : "border-site-border text-site-text-muted hover:border-site-border-hover"
@@ -152,7 +152,7 @@ export function Playground() {
             <div className="flex gap-2">
               <button
                 onClick={handleCopySvg}
-                className={`px-4 py-2 text-sm rounded-lg border transition-all cursor-pointer ${
+                className={`px-5 py-2.5 text-sm rounded-lg border transition-all cursor-pointer ${
                   svgCopied
                     ? "border-site-accent text-site-accent bg-site-accent-dim"
                     : "border-site-border text-site-text-secondary hover:border-site-accent hover:text-site-accent"
@@ -163,12 +163,12 @@ export function Playground() {
               <button
                 onClick={handleDownloadPng}
                 disabled={pngStatus === "downloading"}
-                className={`px-4 py-2 text-sm rounded-lg border transition-all cursor-pointer ${
+                className={`px-5 py-2.5 text-sm rounded-lg border transition-all ${
                   pngStatus === "error"
-                    ? "border-red-400 text-red-400"
+                    ? "border-red-400 text-red-400 cursor-pointer"
                     : pngStatus === "downloading"
-                      ? "border-site-border text-site-text-muted opacity-70"
-                      : "border-site-border text-site-text-secondary hover:border-site-accent hover:text-site-accent"
+                      ? "border-site-border text-site-text-muted opacity-70 cursor-not-allowed"
+                      : "border-site-border text-site-text-secondary hover:border-site-accent hover:text-site-accent cursor-pointer"
                 }`}
               >
                 {pngStatus === "downloading"

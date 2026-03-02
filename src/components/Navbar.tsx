@@ -81,7 +81,7 @@ export function Navbar() {
         </button>
 
         {/* Desktop nav links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map(({ id, label }) => (
             <button
               key={id}
@@ -100,7 +100,7 @@ export function Navbar() {
         {/* Theme dots + mobile toggle */}
         <div className="flex items-center gap-2">
           {/* Theme dots (always visible) */}
-          <div className="flex items-center gap-0">
+          <div className="flex items-center gap-0.5">
             {THEME_NAMES.map((name) => {
               const colors = THEME_SITE_COLORS[name];
               const isActive = theme === name;
@@ -109,7 +109,7 @@ export function Navbar() {
                   key={name}
                   onClick={() => setTheme(name)}
                   aria-label={`${THEME_LABELS[name]} theme`}
-                  className="p-1.5 cursor-pointer group"
+                  className="p-2.5 cursor-pointer group"
                 >
                   <span
                     className={`block w-3 h-3 rounded-full border transition-all ${
@@ -128,7 +128,7 @@ export function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
-            className="md:hidden p-1.5 text-site-text-muted hover:text-site-text transition-colors cursor-pointer"
+            className="lg:hidden p-2.5 text-site-text-muted hover:text-site-text transition-colors cursor-pointer"
           >
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
               {mobileOpen ? (
@@ -143,7 +143,7 @@ export function Navbar() {
 
       {/* Mobile dropdown */}
       {mobileOpen && (
-        <div className="md:hidden bg-site-bg/95 backdrop-blur-md border-b border-site-border px-4 pb-4">
+        <div className="lg:hidden bg-site-bg/95 backdrop-blur-md border-b border-site-border px-4 pb-4">
           <div className="flex flex-col gap-1">
             {NAV_LINKS.map(({ id, label }) => (
               <button

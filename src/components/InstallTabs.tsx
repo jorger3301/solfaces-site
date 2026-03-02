@@ -28,12 +28,12 @@ export function InstallTabs() {
 
         <div className="rounded-lg border border-site-border bg-site-bg-card overflow-hidden">
           {/* Tabs */}
-          <div className="flex border-b border-site-border">
+          <div className="flex overflow-x-auto border-b border-site-border scrollbar-hide">
             {INSTALL_COMMANDS.map((cmd, i) => (
               <button
                 key={cmd.label}
                 onClick={() => setActive(i)}
-                className={`px-4 py-2.5 text-sm font-mono transition-all cursor-pointer ${
+                className={`px-3 py-3 text-sm font-mono transition-all cursor-pointer whitespace-nowrap sm:px-4 ${
                   active === i
                     ? "text-site-accent border-b-2 border-site-accent bg-site-bg-raised"
                     : "text-site-text-muted hover:text-site-text-secondary"
@@ -55,15 +55,16 @@ export function InstallTabs() {
 
         {/* Python */}
         <div className="mt-4 rounded-lg border border-site-border bg-site-bg-card p-4">
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex items-center justify-between gap-2">
+            <div className="min-w-0 flex-1">
               <span className="text-xs text-site-text-muted font-mono">
                 Python
               </span>
-              <code className="block text-sm font-mono text-site-text mt-1">
+              <code className="block text-sm font-mono text-site-text mt-1 truncate">
                 curl -O https://raw.githubusercontent.com/jorger3301/solfaces/main/python/solfaces.py
               </code>
             </div>
+            <CopyButton text="curl -O https://raw.githubusercontent.com/jorger3301/solfaces/main/python/solfaces.py" />
           </div>
         </div>
 

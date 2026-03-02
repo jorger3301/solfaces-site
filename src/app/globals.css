@@ -172,12 +172,30 @@ footer,
   transform: translateY(-2px);
 }
 
+/* ─── SolFace blink animation fix for mobile ─── */
+
+[class$="-eyes"] {
+  will-change: transform;
+  -webkit-transform: translateZ(0);
+}
+
 /* ─── Code block ─── */
 
 pre code {
   font-family: var(--font-mono), monospace;
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* ─── Hide scrollbar utility ─── */
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }
 
 /* ─── Selection ─── */

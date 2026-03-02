@@ -28,7 +28,7 @@ export function ThemeGallery() {
         </p>
       </FadeIn>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
         {THEME_NAMES.map((name, i) => {
           const isActive = theme === name;
           const isReactOnly = REACT_ONLY_THEMES.has(name);
@@ -36,7 +36,7 @@ export function ThemeGallery() {
             <FadeIn key={name} delay={i * 0.05}>
               <button
                 onClick={() => setTheme(name)}
-                className={`theme-card w-full p-5 rounded-xl border text-left transition-all cursor-pointer ${
+                className={`theme-card w-full p-4 sm:p-5 rounded-xl border text-left transition-all cursor-pointer ${
                   isActive
                     ? "border-site-accent bg-site-accent-dim shadow-lg"
                     : "border-site-border bg-site-bg-card hover:border-site-border-hover"

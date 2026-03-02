@@ -45,22 +45,21 @@ export function ThemeProvider({
   children: ReactNode;
   defaultTheme?: string;
 }) {
-  const [theme, setThemeState] = useState(defaultTheme);
+  const [theme, setThemeState] = useState(() => {
+    if (typeof window === "undefined") return defaultTheme;
+    try {
+      const stored = localStorage.getItem("solfaces-theme");
+      return stored && THEME_SITE_COLORS[stored] ? stored : defaultTheme;
+    } catch {
+      return defaultTheme;
+    }
+  });
   const siteColors = THEME_SITE_COLORS[theme] ?? THEME_SITE_COLORS.default;
 
   const setTheme = useCallback((t: string) => {
     setThemeState(t);
     try {
       localStorage.setItem("solfaces-theme", t);
-    } catch {}
-  }, []);
-
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("solfaces-theme");
-      if (stored && THEME_SITE_COLORS[stored]) {
-        setThemeState(stored);
-      }
     } catch {}
   }, []);
 

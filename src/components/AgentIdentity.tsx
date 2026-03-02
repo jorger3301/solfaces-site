@@ -3,29 +3,20 @@
 import { useMemo } from "react";
 import { SolFace, useSolName } from "solfaces/react";
 import { agentAppearancePrompt } from "solfaces";
+import { deriveName } from "solfaces/names";
 import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS } from "@/lib/constants";
 import { FadeIn } from "./FadeIn";
 import { CodeBlock } from "./CodeBlock";
 
 const AGENT_WALLET = DEMO_WALLETS[1];
-const AGENT_NAME = "Atlas";
-
-const MCP_CONFIG = `{
-  "mcpServers": {
-    "solfaces": {
-      "command": "npx",
-      "args": ["-y", "solfaces-mcp"]
-    }
-  }
-}`;
 
 export function AgentIdentity() {
   const themeObj = useThemeObj();
   const name = useSolName(AGENT_WALLET, "display");
 
   const prompt = useMemo(
-    () => agentAppearancePrompt(AGENT_WALLET, AGENT_NAME),
+    () => agentAppearancePrompt(AGENT_WALLET, deriveName(AGENT_WALLET, "display")),
     []
   );
 
@@ -45,11 +36,11 @@ export function AgentIdentity() {
           <div className="space-y-4">
             <CodeBlock
               code={`import { agentAppearancePrompt } from "solfaces";
+import { deriveName } from "solfaces/names";
 
-const prompt = agentAppearancePrompt(
-  "${AGENT_WALLET.slice(0, 20)}...",
-  "${AGENT_NAME}"
-);`}
+const wallet = "${AGENT_WALLET.slice(0, 20)}...";
+const name = deriveName(wallet, "display");
+const prompt = agentAppearancePrompt(wallet, name);`}
               language="typescript"
             />
 
@@ -72,18 +63,11 @@ const prompt = agentAppearancePrompt(
               />
             </div>
             <p className="text-lg font-semibold text-site-text">
-              Meet {AGENT_NAME}
+              Meet {name}
             </p>
-            <p className="text-sm text-site-text-muted text-center">
-              SolName: {name}
+            <p className="text-sm text-site-text-muted text-center max-w-xs">
+              Deterministic identity — same wallet always produces the same face, name, and self-description.
             </p>
-
-            <div className="w-full mt-4">
-              <p className="text-xs text-site-text-muted mb-2">
-                MCP Server Config
-              </p>
-              <CodeBlock code={MCP_CONFIG} language="json" />
-            </div>
           </div>
         </FadeIn>
       </div>
