@@ -76,6 +76,7 @@ export default function OGImage() {
                 src={`data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`}
                 width={96}
                 height={96}
+                alt={name}
               />
               <span style={{ fontSize: 13, color: "#8c8ca0" }}>{name}</span>
             </div>

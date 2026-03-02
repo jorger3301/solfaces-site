@@ -5,7 +5,7 @@ function WalletAvatar({ wallet }: { wallet: string }) {
 
   return (
     <div>
-      <SolFace wallet={wallet} size={64} enableBlink />
+      <SolFace walletAddress={wallet} size={64} enableBlink />
       <p>{name}</p>
     </div>
   );

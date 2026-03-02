@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { id: SECTION_IDS.themes, label: "Themes" },
   { id: SECTION_IDS.code, label: "Code" },
   { id: SECTION_IDS.agent, label: "Agent" },
+  { id: SECTION_IDS.skill, label: "Skill" },
   { id: SECTION_IDS.api, label: "API" },
 ];
 
@@ -99,7 +100,7 @@ export function Navbar() {
         {/* Theme dots + mobile toggle */}
         <div className="flex items-center gap-2">
           {/* Theme dots (always visible) */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0">
             {THEME_NAMES.map((name) => {
               const colors = THEME_SITE_COLORS[name];
               const isActive = theme === name;
@@ -108,13 +109,17 @@ export function Navbar() {
                   key={name}
                   onClick={() => setTheme(name)}
                   aria-label={`${THEME_LABELS[name]} theme`}
-                  className={`w-3.5 h-3.5 rounded-full border transition-all cursor-pointer ${
-                    isActive
-                      ? "border-site-accent scale-125 shadow-sm"
-                      : "border-transparent hover:scale-110 opacity-60 hover:opacity-100"
-                  }`}
-                  style={{ backgroundColor: colors.accent }}
-                />
+                  className="p-1.5 cursor-pointer group"
+                >
+                  <span
+                    className={`block w-3 h-3 rounded-full border transition-all ${
+                      isActive
+                        ? "border-site-accent scale-125 shadow-sm"
+                        : "border-transparent group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                    }`}
+                    style={{ backgroundColor: colors.accent }}
+                  />
+                </button>
               );
             })}
           </div>

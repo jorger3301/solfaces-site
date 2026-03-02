@@ -35,6 +35,7 @@ export const SECTION_IDS = {
   themes: "themes",
   code: "code-examples",
   agent: "agent-identity",
+  skill: "skill-config",
   api: "api-reference",
   footer: "footer",
 } as const;

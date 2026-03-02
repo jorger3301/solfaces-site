@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { SolFace, useSolName } from "solfaces/react";
+import { SolFace } from "solfaces/react";
 import { deriveIdentity } from "solfaces/names";
 import { useThemeObj } from "@/context/ThemeContext";
 import { DEMO_WALLETS, SECTION_IDS } from "@/lib/constants";

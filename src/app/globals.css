@@ -74,12 +74,11 @@ section[id] {
 
 /* ─── Smooth theme transitions ─── */
 
-.theme-transition,
-button,
-a,
-input,
-[class*="border-site-"],
-[class*="bg-site-"] {
+section,
+nav,
+footer,
+.theme-card,
+.skip-link {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 

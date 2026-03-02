@@ -59,8 +59,8 @@ export function ThemeGallery() {
                   <span
                     className={`text-[10px] px-2 py-0.5 rounded-full ${
                       isReactOnly
-                        ? "bg-purple-500/10 text-purple-400"
-                        : "bg-green-500/10 text-green-500"
+                        ? "bg-site-accent-dim text-site-accent"
+                        : "bg-site-bg-input text-site-text-muted"
                     }`}
                   >
                     {isReactOnly ? "React only" : "All renderers"}

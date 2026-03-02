@@ -7,6 +7,7 @@ import { WhySolFaces } from "@/components/WhySolFaces";
 import { ThemeGallery } from "@/components/ThemeGallery";
 import { CodeExamples } from "@/components/CodeExamples";
 import { AgentIdentity } from "@/components/AgentIdentity";
+import { SkillConfig } from "@/components/SkillConfig";
 import { ApiReference } from "@/components/ApiReference";
 import { Footer } from "@/components/Footer";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -35,6 +36,8 @@ export default function Home() {
       <CodeExamples />
       <SectionDivider />
       <AgentIdentity />
+      <SectionDivider />
+      <SkillConfig />
       <SectionDivider />
       <ApiReference />
       <SectionDivider />
