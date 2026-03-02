@@ -28,7 +28,7 @@ export function Hero() {
                 .getElementById(SECTION_IDS.playground)
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-6 py-3 text-sm font-medium rounded-lg bg-site-accent text-white hover:opacity-90 transition-opacity cursor-pointer"
+            className="px-6 py-3 text-sm font-medium rounded-lg bg-site-accent text-site-accent-text hover:opacity-90 transition-opacity cursor-pointer"
           >
             Try It Now
           </button>

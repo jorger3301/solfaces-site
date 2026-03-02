@@ -10,6 +10,7 @@ export interface SiteColors {
   borderHover: string;
   accent: string;
   accentDim: string;
+  accentText: string;
 }
 
 export const THEME_SITE_COLORS: Record<string, SiteColors> = {
@@ -25,6 +26,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#c8c4c0",
     accent: "#8869ab",
     accentDim: "rgba(136, 105, 171, 0.15)",
+    accentText: "#ffffff",
   },
   dark: {
     bg: "#0e0f14",
@@ -33,11 +35,12 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     bgInput: "#12131a",
     text: "#e8e8f0",
     textSecondary: "#8c8ca0",
-    textMuted: "#5c5c70",
+    textMuted: "#7a7a90",
     border: "#363648",
     borderHover: "#4a4a5c",
     accent: "#9945FF",
     accentDim: "rgba(153, 69, 255, 0.15)",
+    accentText: "#ffffff",
   },
   light: {
     bg: "#fafafa",
@@ -51,6 +54,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#c8c8c8",
     accent: "#6499af",
     accentDim: "rgba(100, 153, 175, 0.15)",
+    accentText: "#ffffff",
   },
   mono: {
     bg: "#f0f0f0",
@@ -59,11 +63,12 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     bgInput: "#e8e8e8",
     text: "#333333",
     textSecondary: "#666666",
-    textMuted: "#999999",
+    textMuted: "#777777",
     border: "#d0d0d0",
     borderHover: "#b0b0b0",
     accent: "#555555",
     accentDim: "rgba(119, 119, 119, 0.15)",
+    accentText: "#ffffff",
   },
   flat: {
     bg: "#faf8f6",
@@ -77,6 +82,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#c8c4c0",
     accent: "#69ab79",
     accentDim: "rgba(105, 171, 121, 0.15)",
+    accentText: "#1a1a2e",
   },
   transparent: {
     bg: "#faf8f6",
@@ -90,6 +96,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#c8c4c0",
     accent: "#b785b3",
     accentDim: "rgba(183, 133, 179, 0.15)",
+    accentText: "#ffffff",
   },
   glass: {
     bg: "#f0f0f4",
@@ -103,6 +110,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "rgba(255,255,255,0.6)",
     accent: "#6499af",
     accentDim: "rgba(100, 153, 175, 0.15)",
+    accentText: "#ffffff",
   },
   glassDark: {
     bg: "#0e0f14",
@@ -116,6 +124,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "rgba(255,255,255,0.2)",
     accent: "#9945FF",
     accentDim: "rgba(153, 69, 255, 0.15)",
+    accentText: "#ffffff",
   },
   pixel: {
     bg: "#faf8f6",
@@ -129,6 +138,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#c8c4c0",
     accent: "#b98387",
     accentDim: "rgba(185, 131, 135, 0.15)",
+    accentText: "#ffffff",
   },
   pixelRetro: {
     bg: "#1a1a1a",
@@ -142,6 +152,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#4a4a4a",
     accent: "#e8c040",
     accentDim: "rgba(232, 192, 64, 0.15)",
+    accentText: "#1a1a1a",
   },
   pixelClean: {
     bg: "#ffffff",
@@ -155,6 +166,7 @@ export const THEME_SITE_COLORS: Record<string, SiteColors> = {
     borderHover: "#d0d0d0",
     accent: "#69ab79",
     accentDim: "rgba(105, 171, 121, 0.15)",
+    accentText: "#1a1a2e",
   },
 };
 

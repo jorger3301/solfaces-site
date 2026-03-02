@@ -16,6 +16,7 @@ html {
   --site-border-hover: #c8c4c0;
   --site-accent: #8869ab;
   --site-accent-dim: rgba(136, 105, 171, 0.15);
+  --site-accent-text: #ffffff;
 }
 
 @theme inline {
@@ -30,6 +31,7 @@ html {
   --color-site-border-hover: var(--site-border-hover);
   --color-site-accent: var(--site-accent);
   --color-site-accent-dim: var(--site-accent-dim);
+  --color-site-accent-text: var(--site-accent-text);
   --font-sans: var(--font-space-grotesk);
   --font-mono: var(--font-jetbrains-mono);
 }
@@ -56,7 +58,7 @@ section[id] {
   z-index: 100;
   padding: 0.5rem 1rem;
   background: var(--site-accent);
-  color: #fff;
+  color: var(--site-accent-text);
   font-size: 0.875rem;
   border-radius: 0 0 0.5rem 0;
 }

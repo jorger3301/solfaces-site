@@ -36,6 +36,7 @@ function applySiteColors(colors: SiteColors) {
   root.style.setProperty("--site-border-hover", colors.borderHover);
   root.style.setProperty("--site-accent", colors.accent);
   root.style.setProperty("--site-accent-dim", colors.accentDim);
+  root.style.setProperty("--site-accent-text", colors.accentText);
 }
 
 export function ThemeProvider({

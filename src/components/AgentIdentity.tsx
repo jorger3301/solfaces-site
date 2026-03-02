@@ -21,7 +21,7 @@ export function AgentIdentity() {
   );
 
   return (
-    <section id={SECTION_IDS.agent} className="py-24 px-6 max-w-6xl mx-auto">
+    <section id={SECTION_IDS.agent} className="py-16 sm:py-24 px-6 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-site-text">
           AI Agent Identity

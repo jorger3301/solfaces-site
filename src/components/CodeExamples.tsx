@@ -13,7 +13,7 @@ export function CodeExamples() {
   const snippet = TABS[active][1];
 
   return (
-    <section id={SECTION_IDS.code} className="py-24 px-6 max-w-4xl mx-auto">
+    <section id={SECTION_IDS.code} className="py-16 sm:py-24 px-6 max-w-4xl mx-auto">
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-site-text">
           Code Examples
@@ -29,9 +29,9 @@ export function CodeExamples() {
             <button
               key={key}
               onClick={() => setActive(i)}
-              className={`px-4 py-2 text-sm rounded-lg transition-all cursor-pointer ${
+              className={`px-4 py-2.5 text-sm rounded-lg transition-all cursor-pointer ${
                 active === i
-                  ? "bg-site-accent text-white"
+                  ? "bg-site-accent text-site-accent-text"
                   : "text-site-text-muted hover:text-site-text-secondary hover:bg-site-bg-input"
               }`}
             >

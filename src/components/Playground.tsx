@@ -70,7 +70,7 @@ export function Playground() {
   return (
     <section
       id={SECTION_IDS.playground}
-      className="py-24 px-6 max-w-6xl mx-auto"
+      className="py-16 sm:py-24 px-6 max-w-6xl mx-auto"
     >
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-site-text">
