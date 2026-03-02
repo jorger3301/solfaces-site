@@ -19,19 +19,20 @@ function DonateSection({ themeObj }: { themeObj?: object }) {
   }, []);
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <p className="text-xs text-site-text-muted">Support the project</p>
+    <div className="flex flex-col items-center gap-2">
       <button
         onClick={handleCopy}
-        className="flex items-center gap-3 px-4 py-3 rounded-xl border border-site-border bg-site-bg-card hover:border-site-accent transition-all cursor-pointer group"
+        className="flex items-center gap-3 px-5 py-3 rounded-xl border border-site-border bg-site-bg-card hover:border-site-accent hover:shadow-md transition-all cursor-pointer group"
       >
         <SolFace walletAddress={DONATE_WALLET} size={36} theme={themeObj} />
         <div className="text-left">
           <p className="text-sm font-semibold text-site-text group-hover:text-site-accent transition-colors">
-            {name}
+            {copied ? "Address Copied!" : "Donate SOL"}
           </p>
           <p className="text-[10px] font-mono text-site-text-muted">
-            {copied ? "Copied!" : `${DONATE_WALLET.slice(0, 4)}...${DONATE_WALLET.slice(-4)}`}
+            {copied
+              ? "Send any amount to support the project"
+              : `${DONATE_WALLET.slice(0, 4)}...${DONATE_WALLET.slice(-4)} · Click to copy`}
           </p>
         </div>
       </button>
