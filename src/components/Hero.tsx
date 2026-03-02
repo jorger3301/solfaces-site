@@ -7,10 +7,10 @@ export function Hero() {
   return (
     <section
       id={SECTION_IDS.hero}
-      className="min-h-screen flex flex-col items-center justify-center relative px-6"
+      className="min-h-screen flex flex-col items-center justify-center relative px-4 sm:px-6"
     >
       <div className="text-center mb-12">
-        <h1 className="text-5xl sm:text-7xl md:text-8xl font-bold tracking-[0.15em] sm:tracking-[0.3em] glow-title text-site-text">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold tracking-[0.08em] sm:tracking-[0.15em] md:tracking-[0.3em] glow-title text-site-text">
           SOLFACES
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-site-text-secondary max-w-xl mx-auto">

@@ -47,7 +47,7 @@ Use \`deriveName(wallet, "display")\` for names and
 
 export function SkillConfig() {
   return (
-    <section id={SECTION_IDS.skill} className="py-16 sm:py-24 px-6 max-w-4xl mx-auto">
+    <section id={SECTION_IDS.skill} className="py-16 sm:py-24 px-4 sm:px-6 max-w-4xl mx-auto">
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-2 text-site-text">
           Give This to Your Agent

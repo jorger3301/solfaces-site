@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer
       id={SECTION_IDS.footer}
-      className="py-16 px-6 border-t border-site-border"
+      className="py-16 px-4 sm:px-6 border-t border-site-border"
     >
       <div className="max-w-4xl mx-auto text-center space-y-8">
         {/* Decorative faces */}
@@ -31,7 +31,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="flex justify-center gap-6 text-sm">
+        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
           <a
             href={GITHUB_URL}
             target="_blank"

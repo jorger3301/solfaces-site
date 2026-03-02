@@ -26,7 +26,7 @@ const CORE_FUNCTIONS = [
 
 export function ApiReference() {
   return (
-    <section id={SECTION_IDS.api} className="py-16 sm:py-24 px-6 max-w-6xl mx-auto">
+    <section id={SECTION_IDS.api} className="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto">
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-site-text">
           API Reference

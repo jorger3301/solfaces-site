@@ -20,7 +20,7 @@ export function InstallTabs() {
   const [active, setActive] = useState(0);
 
   return (
-    <section id={SECTION_IDS.install} className="py-16 sm:py-24 px-6 max-w-3xl mx-auto">
+    <section id={SECTION_IDS.install} className="py-16 sm:py-24 px-4 sm:px-6 max-w-3xl mx-auto">
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 text-site-text">
           Install

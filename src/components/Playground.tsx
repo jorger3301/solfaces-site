@@ -70,7 +70,7 @@ export function Playground() {
   return (
     <section
       id={SECTION_IDS.playground}
-      className="py-16 sm:py-24 px-6 max-w-6xl mx-auto"
+      className="py-16 sm:py-24 px-4 sm:px-6 max-w-6xl mx-auto"
     >
       <FadeIn>
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-site-text">
@@ -82,7 +82,7 @@ export function Playground() {
       </FadeIn>
 
       <FadeIn delay={0.1}>
-        <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="flex flex-col-reverse md:grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {/* Input column */}
           <div className="space-y-4">
             <div>
@@ -103,12 +103,12 @@ export function Playground() {
               )}
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
               {QUICK_TRY_WALLETS.map(({ address, label }) => (
                 <button
                   key={address}
                   onClick={() => selectWallet(address)}
-                  className={`px-4 py-2.5 text-xs rounded-full border transition-all cursor-pointer ${
+                  className={`px-3 sm:px-4 py-2 sm:py-2.5 text-xs rounded-full border transition-all cursor-pointer ${
                     input === address
                       ? "border-site-accent text-site-accent bg-site-accent-dim"
                       : "border-site-border text-site-text-muted hover:border-site-border-hover"
@@ -140,8 +140,8 @@ export function Playground() {
 
           {/* Output column */}
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="rounded-2xl p-6 border border-site-border bg-site-bg-card">
-              <SolFace walletAddress={wallet} size={200} enableBlink theme={themeObj} />
+            <div className="rounded-2xl p-4 sm:p-6 border border-site-border bg-site-bg-card">
+              <SolFace walletAddress={wallet} size={160} enableBlink theme={themeObj} />
             </div>
 
             <div>
